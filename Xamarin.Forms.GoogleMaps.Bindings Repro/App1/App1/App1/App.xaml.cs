@@ -11,7 +11,10 @@ namespace App1
 		{
 			InitializeComponent();
 
-			MainPage = new MainPage();
+            var name = typeof(Application).Assembly.FullName;
+            var version = typeof(Application).Assembly.GetName().Version;
+
+            MainPage = new MainPage();
 		}
 
 		protected override void OnStart ()

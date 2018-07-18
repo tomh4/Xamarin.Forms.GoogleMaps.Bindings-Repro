@@ -1,14 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:custom="clr-namespace:Foodhorn.Controls"
-            xmlns:bindings="clr-namespace:Xamarin.Forms.GoogleMaps.Bindings;assembly=Xamarin.Forms.GoogleMaps.Bindings"
+             xmlns:local="clr-namespace:App1"
+             xmlns:googleMaps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             xmlns:bindings="clr-namespace:Xamarin.Forms.GoogleMaps.Bindings;assembly=Xamarin.Forms.GoogleMaps.Bindings"
              x:Class="App1.MainPage"
-    x:Name="this"
-    BindingContext="{x:Reference this}">
-    <custom:MapView x:Name="MapLayer"  Grid.Row="0" Grid.Column="0" Grid.RowSpan="5">
-        <custom:MapView.Behaviors>
-            <bindings:BindingPinsBehavior Value="{Binding Pins}"/>
-        </custom:MapView.Behaviors>
-    </custom:MapView>
+             x:Name="this"
+             BindingContext="{x:Reference this}">
+
+    <StackLayout>
+        <Button Text="Move" Command="{Binding MoveCommand}"/>
+        <local:MapView x:Name="MapLayer"  Grid.Row="0" Grid.Column="0" Grid.RowSpan="5">
+            <local:MapView.Behaviors>
+                <bindings:BindingPinsBehavior Value="{Binding Pins}"/>
+                <bindings:MoveToRegionBehavior Request="{Binding Request}"/>
+            </local:MapView.Behaviors>
+        </local:MapView>
+    </StackLayout>
+
 </ContentPage>

@@ -5,5 +5,5 @@
     xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps" 
     xmlns:custom="clr-namespace:Foodhorn.Controls"
     x:Name="this"
-    x:Class="MapView" BindingContext="{x:Reference this}">
+    x:Class="App1.MapView">
 </maps:Map>
